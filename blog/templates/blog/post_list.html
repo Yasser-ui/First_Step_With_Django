@@ -7,16 +7,12 @@
             <h1><a href="/">My Blog</a></h1>
         </header>
 
+        {% for post in posts %}
         <article>
-            <time>publication: 12.12.2021, 11:56</time>
-            <h2><a href="">Mon premier article</a></h2>
-            <p>ben youssef yasser, etudiant en 2ème année Master professionnel en réseaux et applications distribuées de specialité ingénerie des systemes informatique</p>
+            <time>publication: {{ post.published_date }}</time>
+            <h2><a href=""> {{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-
-        <article>
-            <time>publication: 12.12.2021, 11:56</time>
-            <h2><a href="">Mon premier article</a></h2>
-            <p>ben youssef yasser, etudiant en 2ème année Master professionnel en réseaux et applications distribuées de specialité ingénerie des systemes informatique</p>
-        </article>
+        {% endfor %}
     </body>
 </html>
